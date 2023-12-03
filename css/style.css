@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+:root {
+    --rich-black: #0C1618;
+    --charcoal: #424C55;
+    --dun-color: #CDC5B4;
+    --rose-quartz: #B59DA4;
+    --celestial-blue: #279AF1;
+    --picton-blue: #00A6FB;
+    --text-color: #000000;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--rich-black);
+    flex-shrink: 1;
+    width: 240px;
+    padding: 5px 5px;
+}
+
+.wrapper .sidebar .navLogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    color: var(--dun-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.wrapper .sidebar .navSearch {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 16px;
+    height: 24px;
+    background: var(--charcoal);
+    padding: 5px 10px;
+    color: var(--dun-color);
+}
+
+.wrapper .sidebar .navSearch input {
+    border-style: none;
+    height: 90%;
+    width: 80%;
+    font-size: 16px;
+    background: var(--charcoal);
+    outline: none;
+    color: var(--dun-color);
+}
+
+.wrapper .sidebar .navLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 16px;
+    height: 24px;
+    background: var(--charcoal);
+    padding: 5px 10px;
+    color: var(--dun-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+.wrapper .sidebar .navLink:hover {
+    background: var(--dun-color);
+    color: var(--rich-black);
+}
+
+.wrapper .sidebar footer {
+    display: flex;
+    color: var(--dun-color);
+    font-size: 12px;
+    margin-top: auto;
+    margin-bottom: 2vh;
+    align-self: center;
+}
+
+.wrapper .mainContent {
+    display: flex;
+    flex-shrink: 1;
+    width: 100%;
+    padding: 20px 20px;
+}
