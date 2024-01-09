@@ -21,6 +21,7 @@
     <script src="js/prices.js"></script>
     <script src="js/tasks.js"></script>
     <script src="js/contacts.js"></script>
+    <script src="js/dbList.js"></script>
 
 </head>
 <body>
@@ -30,23 +31,23 @@
             <i class='bx bxs-coffee-bean' ></i>
             <span class="navLogoTitle">BizManager</span>
         </div>
-        <div class="navSearch">
+        <div class="navSearch" id="navSearch">
             <i class='bx bx-search' ></i>
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Search..." oninput="filterProducts()">
         </div>
-        <a href="#" class="navLink">
+        <a href="#" class="navLink" onclick="onClickHome()">
             <i class='bx bxs-home' ></i>
             <span class="navTitle">HOME</span>
         </a>
-        <a href="#" class="navLink">
+        <a href="#" class="navLink" onclick="onClickPrices()">
             <i class='bx bx-money' ></i>
             <span class="navTitle">PRICES</span>
         </a>
-        <a href="#" class="navLink">
+        <a href="#" class="navLink" onclick="onClickTasks()">
             <i class='bx bx-task' ></i>
             <span class="navTitle">TASKS</span>
         </a>
-        <a href="#" class="navLink">
+        <a href="#" class="navLink" onclick="onClickContacts()">
             <i class='bx bx-user' ></i>
             <span class="navTitle">CONTACTS</span>
         </a>
@@ -55,7 +56,46 @@
         </footer>
     </nav>
     <main class="mainContent">
-        <h1>Home</h1>
+        <div class="mainContentTitle">
+            <h1 id="mainTitle">Home</h1>
+            <a href="#" class="newButton" id="newContactButton" onclick="newContact()">
+                <i class='bx bx-user-plus'></i>
+                <span class="newContactButtonTitle">NEW</span>
+            </a>
+            <a href="#" class="newButton" id="newTaskButton" onclick="newTask()">
+                <i class='bx bx-task' ></i>
+                <span class="newTaskButtonTitle">NEW</span>
+            </a>
+            <a href="#" class="newButton" id="newProductButton" onclick="newProduct()">
+                <i class='bx bxl-shopify' ></i>
+                <span class="newTaskButtonTitle">NEW</span>
+            </a>
+        </div>
+        <div class="mainContentDiv">
+            <table class="table" id="contactTable">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>e-mail</th>
+                    <th>Phone Number</th>
+                </tr>
+                </thead>
+                <tbody class="tableBody" id="tableBody"></tbody>
+            </table>
+            <div class="taskContainer" id="taskContainer"></div>
+            <table class="table" id="priceTable">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                </thead>
+                <tbody class="tableBody" id="tablePriceBody"></tbody>
+            </table>
+        </div>
     </main>
 </div>
 </body>

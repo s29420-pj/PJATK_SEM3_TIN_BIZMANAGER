@@ -45,7 +45,7 @@
 }
 
 .wrapper .sidebar .navSearch {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -97,7 +97,102 @@
 
 .wrapper .mainContent {
     display: flex;
+    flex-direction: column;
     flex-shrink: 1;
     width: 100%;
     padding: 20px 20px;
+}
+
+.wrapper .mainContentTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper .mainContent .mainContentTitle .newButton {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 16px;
+    height: 24px;
+    width: 6vw;
+    background: var(--charcoal);
+    padding: 5px 10px;
+    color: var(--dun-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+.wrapper .mainContent .mainContentTitle .newButton:hover {
+    background: var(--dun-color);
+    color: var(--rich-black);
+}
+
+.wrapper .mainContent .mainContentDiv {
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    background: var(--rich-black);
+    border-radius: 16px;
+    padding: 4px;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper .mainContent .mainContentDiv .table {
+    display: none;
+    padding: 2px;
+    width: 100%;
+}
+
+.wrapper .mainContent .mainContentDiv .table th {
+    background: var(--dun-color);
+    border-radius: 16px;
+    height: 24px;
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.wrapper .mainContent .mainContentDiv .table td {
+    border-radius: 16px;
+    height: 16px;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.wrapper .mainContent .mainContentDiv .table tr {
+    background: var(--charcoal);
+    border-radius: 16px;
+    height: 16px;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+.wrapper .mainContent .mainContentDiv .table .tableBody tr:hover {
+    filter: brightness(1.3);
+}
+
+.wrapper .mainContent .mainContentDiv .taskContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 2px 2px;
+    gap: 5px;
+
+}
+
+.wrapper .mainContent .mainContentDiv .taskContainer .taskItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 16px;
+    height: auto;
+    background: var(--charcoal);
+    padding: 5px 10px;
+}
+
+.wrapper .mainContent .mainContentDiv .taskContainer .taskItem .doneOrRemove {
+    display: flex;
+    align-self: center;
+    justify-self: center;
 }
