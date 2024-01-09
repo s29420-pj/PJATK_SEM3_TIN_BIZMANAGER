@@ -11,81 +11,48 @@ function onClickInvoice() {
     hideContactContent.style.display = "none";
 }
 function onClickPrices() {
-    let mainTitleElement = document.getElementById("mainTitle");
-    let mainContentDiv = document.getElementById("mainContentDiv");
-    let showPricesContent = document.getElementById("priceTable");
-    let showNewProductButton = document.getElementById("newProductButton")
     let showNavSearch = document.getElementById("navSearch");
+    let changeTitleElement = document.getElementById("mainTitle");
+    let hideNewContactButton = document.getElementById("newContactButton");
     let hideNewTaskButton = document.getElementById("newTaskButton");
+    let showNewProductButton = document.getElementById("newProductButton");
+    let hideContactTable = document.getElementById("contactTable");
     let hideTaskContainer = document.getElementById("taskContainer");
-    let filteredProducts = "";
+    let showPriceTable = document.getElementById("priceTable");
+    let hideInvoiceContainer = document.getElementById("invoiceContainer");
 
-    mainTitleElement.textContent = "Prices";
-    mainContentDiv.style.display = "inline";
-    console.log("Changed tab to Prices.");
-
-    if (mainTitleElement) {
-        mainTitleElement.textContent = "Prices";
-    } else {
-        console.error("Element with id 'mainTitle' not found");
-    }
-
-    if (showPricesContent) {
-        showPricesContent.style.display = "table";
-    } else {
-        console.error("Element with id 'priceTable' not found");
-    }
-
-    if (showNewProductButton) {
-        showNewProductButton.style.display = "flex";
-    } else {
-        console.error("Element with id 'newProductButton' not found");
-    }
-
-    if (showNavSearch) {
-        showNavSearch.style.display = "flex";
-    } else {
-        console.error("Element with id 'navSearch' not found");
-    }
-
-    if (hideNewTaskButton) {
-        hideNewTaskButton.style.display = "none";
-    } else {
-        console.error("Element with id 'newTaskButton' not found");
-    }
-
-    if (hideTaskContainer) {
-        hideTaskContainer.style.display = "none";
-    } else {
-        console.error("Element with id 'taskContainer' not found");
-    }
+    showNavSearch.style.display = "flex";
+    changeTitleElement.textContent = "Prices";
+    hideNewContactButton.style.display = "none";
+    hideNewTaskButton.style.display = "none";
+    showNewProductButton.style.display = "flex";
+    hideContactTable.style.display = "none";
+    hideTaskContainer.style.display = "none";
+    showPriceTable.style.display = "table";
+    hideInvoiceContainer.style.display = "none";
 
     updatePriceTable();
 }
 function onClickTasks() {
-    let mainTitleElement = document.getElementById("mainTitle");
-    let mainContentDiv = document.getElementById("mainContentDiv");
-    let newContactButton = document.getElementById("newContactButton");
-    let hideContactContent = document.getElementById("contactTable");
+    let hideNavSearch = document.getElementById("navSearch");
+    let changeTitleElement = document.getElementById("mainTitle");
+    let hideNewContactButton = document.getElementById("newContactButton");
     let showNewTaskButton = document.getElementById("newTaskButton");
-    let showTaskContainter = document.getElementById("taskContainer");
+    let hideNewProductButton = document.getElementById("newProductButton");
+    let hideContactTable = document.getElementById("contactTable");
+    let showTaskContainer = document.getElementById("taskContainer");
+    let hidePriceTable = document.getElementById("priceTable");
+    let hideInvoiceContainer = document.getElementById("invoiceContainer");
 
-    mainTitleElement.textContent = "Tasks";
-    mainContentDiv.style.display = "inline";
-    newContactButton.style.display = "none";
-    hideContactContent.style.display = "none";
-
-    if (showNewTaskButton) {
-        showNewTaskButton.style.display = "flex";
-    } else {
-        console.error("Element with id 'newTaskButton' not found");
-    }
-
-    if (showTaskContainter) {
-        showTaskContainter.style.display = "flex";
-    } else {
-        console.error("Element with id 'taskContainer' not found");
-    }
+    hideNavSearch.style.display = "none";
+    changeTitleElement.textContent = "Tasks";
+    hideNewContactButton.style.display = "none";
+    showNewTaskButton.style.display = "flex";
+    hideNewProductButton.style.display = "none";
+    hideContactTable.style.display = "none";
+    showTaskContainer.style.display = "flex";
+    hidePriceTable.style.display = "none";
+    hideInvoiceContainer.style.display = "none";
 
     console.log("Changed tab to Tasks.")
     updateTasks();
