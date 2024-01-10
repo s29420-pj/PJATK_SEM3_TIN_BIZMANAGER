@@ -17,16 +17,22 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     <!-- JavaScript -->
-    <script src="js/home.js"></script>
     <script src="js/prices.js"></script>
     <script src="js/tasks.js"></script>
     <script src="js/contacts.js"></script>
     <script src="js/dbList.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/invoice.js"></script>
+    <script>
+        window.onload = function () {
+            updateProductList();
+        };
+    </script>
 
 </head>
 <body>
 <div class="wrapper">
-    <nav class="sidebar">
+    <nav class="sidebar hide-on-print">
         <div class="navLogo">
             <i class='bx bxs-coffee-bean' ></i>
             <span class="navLogoTitle">BizManager</span>
@@ -35,9 +41,9 @@
             <i class='bx bx-search' ></i>
             <input type="text" placeholder="Search..." oninput="filterProducts()">
         </div>
-        <a href="#" class="navLink" onclick="onClickHome()">
-            <i class='bx bxs-home' ></i>
-            <span class="navTitle">HOME</span>
+        <a href="#" class="navLink" onclick="onClickInvoice()">
+            <i class='bx bx-credit-card'></i>
+            <span class="navTitle">NEW INVOICE</span>
         </a>
         <a href="#" class="navLink" onclick="onClickPrices()">
             <i class='bx bx-money' ></i>
@@ -56,8 +62,8 @@
         </footer>
     </nav>
     <main class="mainContent">
-        <div class="mainContentTitle">
-            <h1 id="mainTitle">Home</h1>
+        <div class="mainContentTitle hide-on-print">
+            <h1 id="mainTitle">New Invoice</h1>
             <a href="#" class="newButton" id="newContactButton" onclick="newContact()">
                 <i class='bx bx-user-plus'></i>
                 <span class="newContactButtonTitle">NEW</span>
@@ -71,7 +77,7 @@
                 <span class="newTaskButtonTitle">NEW</span>
             </a>
         </div>
-        <div class="mainContentDiv">
+        <div class="mainContentDiv" id="mainContentDiv">
             <table class="table" id="contactTable">
                 <thead>
                 <tr>
@@ -89,12 +95,62 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Quantity</th>
                     <th>Price</th>
                 </tr>
                 </thead>
                 <tbody class="tableBody" id="tablePriceBody"></tbody>
             </table>
+            <div class="invoiceContainer" id="invoiceContainer">
+                <form class="invoiceForm">
+                    <h3 id="buyerInformation">Buyer Information</h3>
+                    <hr>
+                    <p class="formLabel" id="nameLabel">Company Name / Name & Surname *
+                        <input type="text" name="name" maxlength="50" required />
+                    </p>
+                    <p class="formLabel" id="nipLabel">NIP
+                        <input type="number" name="nip" pattern="\d{10}" />
+                    </p>
+                    <p class="formLabel" id="addressLabel">Address *
+                        <input type="text" name="address" maxlength="50" required />
+                    </p>
+                    <p class="formLabel" id="zipLabel">ZIP *
+                        <input type="text" name="zip" pattern="[0-9]{2}-[0-9]{3}" required />
+                    </p>
+                    <p class="formLabel" id="cityLabel">City *
+                        <input type="text" name="city" required />
+                    </p>
+                    <p class="formLabel" id="countryLabel">Country *
+                        <select name="country">
+                            <option value="pl">Poland</option>
+                            <option value="en">England</option>
+                            <option value="fr">France</option>
+                        </select>
+                    </p>
+                    <hr>
+                    <div class="addProductToInvoice hide-on-print">
+                        <select id="product" onchange="updatePriceAndQuantity()"></select>
+                        <input type="number" id="quantity" placeholder="Quantity" onchange="updateQuantityPrice()"/>
+                        <input type="number" id="price" placeholder="Price" />
+                        <a class="addToInvoiceButton" onclick="addToCart()">Buy</a>
+                    </div>
+                    <hr>
+                    <table class="table" id="invoiceTable" style="display: table">
+                        <thead>
+                        <tr>
+                            <th>lp.</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody class="tableBody" id="tableInvoiceBody"></tbody>
+                    </table>
+                    <hr>
+                    <p id="sumDisplay">Sum: 0.00</p>
+                    <hr>
+                    <button class="hide-on-print" type="submit" onclick="printInvoice()">Print</button>
+                </form>
+            </div>
         </div>
     </main>
 </div>

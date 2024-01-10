@@ -1,46 +1,3 @@
-function onClickContacts() {
-    let mainTitleElement = document.getElementById("mainTitle");
-    let newContactButton = document.getElementById("newContactButton");
-    let showContactContent = document.getElementById("contactTable");
-    let hideNewTaskButton = document.getElementById("newTaskButton");
-    let hideTaskContainer = document.getElementById("taskContainer");
-
-
-    if (mainTitleElement) {
-        mainTitleElement.textContent = "Contacts";
-    } else {
-        console.error("Element with id 'mainTitle' not found");
-    }
-
-    if (newContactButton) {
-        newContactButton.style.display = "flex";
-    } else {
-        console.error("Element with id 'newContactButton' not found");
-    }
-
-    if (showContactContent) {
-        showContactContent.style.display = "table";
-    } else {
-        console.error("Element with id 'contactTable' not found");
-    }
-
-    if (hideNewTaskButton) {
-        hideNewTaskButton.style.display = "none";
-    } else {
-        console.error("Element with id 'newTaskButton' not found");
-    }
-
-    if (hideTaskContainer) {
-        hideTaskContainer.style.display = "none";
-    } else {
-        console.error("Element with id 'taskContainer' not found");
-    }
-
-    console.log("Changed tab to Contacts.");
-
-    updateTable();
-}
-
 function newContact() {
     console.log("New Contact Button clicked");
     alert("Please enter your contact details in the windows that appear.");
@@ -65,15 +22,12 @@ function newContact() {
         updateTable();
     }
 }
-
 function updateTable() {
     let tableBody = document.getElementById('tableBody');
 
     if (tableBody) {
-        // Wyczyść aktualną zawartość tabeli
         tableBody.innerHTML = '';
 
-        // Dodaj każdy kontakt jako nowy wiersz
         Contacts.forEach(function (contact) {
             let row = document.createElement('tr');
 

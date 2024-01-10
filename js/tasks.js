@@ -1,30 +1,3 @@
-function onClickTasks() {
-    let mainTitleElement = document.getElementById("mainTitle");
-    let newContactButton = document.getElementById("newContactButton");
-    let hideContactContent = document.getElementById("contactTable");
-    let showNewTaskButton = document.getElementById("newTaskButton");
-    let showTaskContainter = document.getElementById("taskContainer");
-
-    mainTitleElement.textContent = "Tasks";
-    newContactButton.style.display = "none";
-    hideContactContent.style.display = "none";
-
-    if (showNewTaskButton) {
-        showNewTaskButton.style.display = "flex";
-    } else {
-        console.error("Element with id 'newTaskButton' not found");
-    }
-
-    if (showTaskContainter) {
-        showTaskContainter.style.display = "flex";
-    } else {
-        console.error("Element with id 'taskContainer' not found");
-    }
-
-    console.log("Changed tab to Tasks.")
-    updateTasks();
-}
-
 function updateTasks() {
     let taskContainer = document.getElementById('taskContainer');
     taskContainer.innerHTML = '';

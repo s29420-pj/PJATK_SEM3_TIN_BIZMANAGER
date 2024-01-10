@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap);
 
 :root {
     --rich-black: #0C1618;
@@ -7,54 +7,57 @@
     --rose-quartz: #B59DA4;
     --celestial-blue: #279AF1;
     --picton-blue: #00A6FB;
-    --text-color: #000000;
+    --text-color: #000000
 }
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins",sans-serif
 }
 
 .wrapper {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    height: 100vh;
+    height: 100vh
+}
+
+.wrapper .mainContent,.wrapper .sidebar {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1
 }
 
 .wrapper .sidebar {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
     background: var(--rich-black);
-    flex-shrink: 1;
     width: 240px;
-    padding: 5px 5px;
+    padding: 5px
+}
+
+.wrapper .sidebar .navLogo,.wrapper .sidebar .navSearch {
+    flex-direction: row;
+    align-items: center;
+    color: var(--dun-color)
 }
 
 .wrapper .sidebar .navLogo {
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
     gap: 5px;
-    color: var(--dun-color);
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 32px;
-    font-weight: 600;
+    font-weight: 600
 }
 
 .wrapper .sidebar .navSearch {
     display: none;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     text-decoration: none;
     border-radius: 16px;
     height: 24px;
     background: var(--charcoal);
-    padding: 5px 10px;
-    color: var(--dun-color);
+    padding: 5px 10px
 }
 
 .wrapper .sidebar .navSearch input {
@@ -63,27 +66,17 @@
     width: 80%;
     font-size: 16px;
     background: var(--charcoal);
-    outline: none;
-    color: var(--dun-color);
+    outline: 0;
+    color: var(--dun-color)
 }
 
 .wrapper .sidebar .navLink {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-decoration: none;
-    border-radius: 16px;
-    height: 24px;
-    background: var(--charcoal);
-    padding: 5px 10px;
-    color: var(--dun-color);
-    transition: background 0.3s, color 0.3s;
+    display: flex
 }
 
-.wrapper .sidebar .navLink:hover {
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm .addProductToInvoice .addToInvoiceButton:hover,.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm button:hover,.wrapper .mainContent .mainContentTitle .newButton:hover,.wrapper .sidebar .navLink:hover {
     background: var(--dun-color);
-    color: var(--rich-black);
+    color: var(--rich-black)
 }
 
 .wrapper .sidebar footer {
@@ -92,58 +85,51 @@
     font-size: 12px;
     margin-top: auto;
     margin-bottom: 2vh;
-    align-self: center;
+    align-self: center
 }
 
 .wrapper .mainContent {
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 1;
     width: 100%;
-    padding: 20px 20px;
+    padding: 20px
 }
 
 .wrapper .mainContentTitle {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: center
 }
 
-.wrapper .mainContent .mainContentTitle .newButton {
-    display: none;
+.wrapper .mainContent .mainContentTitle .newButton,.wrapper .sidebar .navLink {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     text-decoration: none;
     border-radius: 16px;
     height: 24px;
-    width: 6vw;
     background: var(--charcoal);
     padding: 5px 10px;
     color: var(--dun-color);
-    transition: background 0.3s, color 0.3s;
+    transition: background .3s,color .3s
 }
 
-.wrapper .mainContent .mainContentTitle .newButton:hover {
-    background: var(--dun-color);
-    color: var(--rich-black);
+.wrapper .mainContent .mainContentTitle .newButton {
+    display: none;
+    width: 6vw
 }
 
 .wrapper .mainContent .mainContentDiv {
-    /*display: flex;*/
-    /*flex-direction: row;*/
+    display: block;
+    overflow: scroll;
     background: var(--rich-black);
     border-radius: 16px;
     padding: 4px;
     width: 100%;
-    height: 100%;
+    height: 100%
 }
 
 .wrapper .mainContent .mainContentDiv .table {
-    display: none;
-    padding: 2px;
-    width: 100%;
+    color: var(--rich-black)
 }
 
 .wrapper .mainContent .mainContentDiv .table th {
@@ -151,34 +137,29 @@
     border-radius: 16px;
     height: 24px;
     padding: 5px 10px;
-    text-align: left;
+    text-align: left
 }
 
-.wrapper .mainContent .mainContentDiv .table td {
+.wrapper .mainContent .mainContentDiv .table td,.wrapper .mainContent .mainContentDiv .table tr {
     border-radius: 16px;
     height: 16px;
     padding: 5px 10px;
-    margin-top: 20px;
+    margin-top: 20px
 }
 
 .wrapper .mainContent .mainContentDiv .table tr {
-    background: var(--charcoal);
-    border-radius: 16px;
-    height: 16px;
-    padding: 5px 10px;
-    margin-top: 20px;
+    background: var(--charcoal)
 }
 
 .wrapper .mainContent .mainContentDiv .table .tableBody tr:hover {
-    filter: brightness(1.3);
+    filter: brightness(1.3)
 }
 
 .wrapper .mainContent .mainContentDiv .taskContainer {
     display: flex;
     flex-direction: column;
-    padding: 2px 2px;
-    gap: 5px;
-
+    padding: 2px;
+    gap: 5px
 }
 
 .wrapper .mainContent .mainContentDiv .taskContainer .taskItem {
@@ -188,11 +169,132 @@
     border-radius: 16px;
     height: auto;
     background: var(--charcoal);
-    padding: 5px 10px;
+    padding: 5px 10px
 }
 
 .wrapper .mainContent .mainContentDiv .taskContainer .taskItem .doneOrRemove {
     display: flex;
     align-self: center;
-    justify-self: center;
+    justify-self: center
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer {
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    color: var(--dun-color);
+    padding: 5px 10px
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm .formLabel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm .formLabel input {
+    width: 80%;
+    height: 16px;
+    padding: 5px 10px;
+    border-radius: 16px;
+    background: var(--charcoal);
+    color: var(--dun-color);
+    border: 0
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm .formLabel select {
+    width: 20%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 16px;
+    background: var(--charcoal);
+    color: var(--dun-color);
+    border: 0
+}
+
+.wrapper .mainContent .mainContentDiv .table {
+    display: none;
+    padding: 2px;
+    width: 100%
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm input,.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm select {
+    min-width: 100px;
+    height: 40px;
+    padding: 10px;
+    border-radius: 16px;
+    background: var(--charcoal);
+    color: var(--dun-color);
+    border: 0
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm input {
+    height: 20px
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm .addProductToInvoice {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm .addProductToInvoice .addToInvoiceButton,.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 16px;
+    height: 30px;
+    width: 6vw;
+    background: var(--charcoal);
+    padding: 5px 10px;
+    color: var(--dun-color);
+    transition: background .3s,color .3s
+}
+
+.wrapper .mainContent .mainContentDiv .invoiceContainer .invoiceForm button {
+    margin: 10px auto;
+    border: 0
+}
+
+@media print {
+    .hide-on-print {
+        display: none!important
+    }
+}
+
+@media (max-width:1280px) {
+    .wrapper {
+        flex-direction: column;
+        font-size: small
+    }
+
+    .wrapper .sidebar {
+        width: 100vw;
+        padding: 5px 10px;
+        justify-content: center
+    }
+
+    .wrapper .sidebar .navLogo {
+        justify-self: center;
+        font-size: 24px
+    }
+
+    .wrapper,.wrapper .sidebar .navLink,.wrapper .sidebar .navSearch,.wrapper .sidebar footer {
+        display: flex
+    }
+
+    .wrapper .mainContent {
+        padding: 10px
+    }
+
+    .wrapper .mainContent .mainContentTitle .newButton {
+        width: auto
+    }
+
+    .wrapper .mainContent .mainContentDiv .table td,.wrapper .mainContent .mainContentDiv .table th,.wrapper .mainContent .mainContentDiv .table tr {
+        margin-top: 10px
+    }
 }

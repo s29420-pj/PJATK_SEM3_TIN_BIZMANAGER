@@ -54,7 +54,6 @@ let Contacts = [
         phoneNumber: '123-987-456'
     }
 ];
-
 let Tasks = [
     {
         id: 1,
@@ -72,66 +71,56 @@ let Tasks = [
         isDone: false,
     },
 ];
-
 let Products = [
     {
         id: 1,
         name: "Smartphone",
-        quantity: 50,
         price: 699.99
     },
     {
         id: 2,
         name: "Laptop",
-        quantity: 30,
         price: 1299.99
     },
     {
         id: 3,
         name: "Wireless Headphones",
-        quantity: 100,
         price: 99.99
     },
     {
         id: 4,
         name: "Smart TV",
-        quantity: 20,
         price: 899.99
     },
     {
         id: 5,
         name: "Fitness Tracker",
-        quantity: 80,
         price: 49.99
     },
     {
         id: 6,
         name: "Coffee Maker",
-        quantity: 40,
         price: 79.99
     },
     {
         id: 7,
         name: "Bluetooth Speaker",
-        quantity: 60,
         price: 59.99
     },
     {
         id: 8,
         name: "Digital Camera",
-        quantity: 25,
         price: 399.99
     },
     {
         id: 9,
         name: "Gaming Console",
-        quantity: 15,
         price: 299.99
     },
     {
         id: 10,
         name: "Electric Scooter",
-        quantity: 10,
         price: 499.99
     }
 ];
+let Cart = [];
