@@ -20,6 +20,7 @@ function onClickInvoice() {
     showInvoiceContainer.style.display = "block";
 
     console.log("Changed tab to New Invoice.");
+    updateProductList();
 }
 function onClickPrices() {
     let showNavSearch = document.getElementById("navSearch");
